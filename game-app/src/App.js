@@ -6,8 +6,12 @@ import styles from './styles.css'
 export default function App() {
   const [diceValues, setDiceValues] = React.useState(getAllNewDice())
 
-  const [gameOver, setGameOver] = React.useState(false);
+  const [gameOver, setGameOver] = React.useState(false)
 
+  const [score, setScore] = React.useState({
+    'current': 0,
+    'best': localStorage.getItem('best') || 999999
+  })
 
   //generates an array of 10 random numbers between 1-6
   function getAllNewDice() {
@@ -34,6 +38,13 @@ export default function App() {
             die
         )
       })
+    })
+
+    setScore(prevScore => {
+      return {
+        ...prevScore,
+        current: prevScore.current + 1
+      }
     })
   }
 
@@ -66,17 +77,22 @@ export default function App() {
   function resetGame() {
     setDiceValues(getAllNewDice())
     setGameOver(false)
+    setScore({
+      current: 0,
+      best: JSON.parse(localStorage.getItem('best')) || 999999
+    })
   }
 
   React.useEffect(() => {
     function checkGameOver() {
       let res = diceValues.filter(die => die.value === diceValues[0].value)
       if (res.length === 10) {
+        localStorage.setItem('best', JSON.stringify(Math.min(score.current, score.best)))
         setGameOver(true);
       }
     }
     checkGameOver()
-  }, [diceValues])
+  }, [diceValues, score])
 
   return (
     <main className="game--container">
@@ -88,6 +104,16 @@ export default function App() {
       <section className="game--options">
         {!gameOver && <button className="game--roll-btn" onClick={handleRoll}>Roll</button>}
         {gameOver && <button className="game--reset-btn" onClick={resetGame}>Reset Game</button>}
+        <div className="game--score">
+          <div className="game--current-score">
+            <p>Current Score:</p>
+            <p>{score.current}</p>
+          </div>
+          <div className="game--best-score">
+            <p>Best Score:</p>
+            <p>{score.best < 999999 ? score.best : "-"}</p>
+          </div>
+        </div>
       </section>
     </main>
   )

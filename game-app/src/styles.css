@@ -85,9 +85,9 @@ body {
     color: white;
     font-size: 1.75rem;
     font-family: inherit;
-    margin-top: 3rem;
     cursor: pointer;
     border: none;
+    height: 70%;
 }
 
 .game--roll-btn:hover, .game--reset-btn:hover {
@@ -97,4 +97,27 @@ body {
 .game--reset-btn {
     font-size: 1.5rem;
     padding: 1rem 2rem;
+}
+
+.game--options {
+    display: flex;
+    margin-top: 3rem;
+    align-items: center;
+}
+
+.game--score {
+    margin-left: 7rem;
+    text-align: start;
+    width: 14rem;
+}
+
+.game--score > div {
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.game--score p {
+    display: inline;
+    margin: 0 0.75rem;
 }
