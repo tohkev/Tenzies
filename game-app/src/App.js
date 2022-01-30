@@ -1,6 +1,7 @@
 import React from 'react';
 import Die from './components/Die.js'
 import styles from './styles.css'
+import Confetti from './components/Confetti.js'
 
 
 export default function App() {
@@ -96,6 +97,7 @@ export default function App() {
 
   return (
     <main className="game--container">
+      {gameOver && <Confetti />}
       <h1 className="game--heading">Tenzies</h1>
       <p className="game--instruction">Roll until all dice have the same value. Click each die to freeze it at its current value between rolls.</p>
       <section className="game--dice-block">
