@@ -10,4 +10,4 @@ Tech used:
     * Side effects
 - CSS
 - Accessing local storage
-- [React Confett](https://github.com/alampros/react-confetti)
+- [React Confetti](https://github.com/alampros/react-confetti)
