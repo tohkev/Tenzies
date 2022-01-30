@@ -87,11 +87,14 @@ body {
     font-family: inherit;
     cursor: pointer;
     border: none;
-    height: 70%;
 }
 
 .game--roll-btn:hover, .game--reset-btn:hover {
     background-color: #4326ff
+}
+
+.game--roll-btn:active, .game--roll-btn:active {
+    box-shadow: inset 5px 5px 10px -3px rgba(0,0,0,0.7);
 }
 
 .game--reset-btn {
