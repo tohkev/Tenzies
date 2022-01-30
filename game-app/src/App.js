@@ -5,7 +5,7 @@ import Confetti from './components/Confetti.js'
 
 
 export default function App() {
-  const [diceValues, setDiceValues] = React.useState(getAllNewDice())
+  const [dice, setDice] = React.useState(getAllNewDice())
 
   const [gameOver, setGameOver] = React.useState(false)
 
@@ -30,7 +30,7 @@ export default function App() {
 
   //rolls the next set of numbers, if a die is frozen, keep the old die
   function handleRoll() {
-    setDiceValues(prevValues => {
+    setDice(prevValues => {
       let newArr = getAllNewDice();
       return prevValues.map((die) => {
         return (
@@ -51,7 +51,7 @@ export default function App() {
 
   //toggles and tracks isFrozen status for all dice
   function toggleFrozen(dieId) {
-    setDiceValues(prevValues => {
+    setDice(prevValues => {
       return prevValues.map(die => {
         return (
           die.id === dieId ?
@@ -63,7 +63,7 @@ export default function App() {
   }
 
   //based on the state, this will create the die elements to be rendered
-  const dieElements = diceValues.map(die => {
+  const dieElements = dice.map(die => {
     return <Die
       key={die.id}
       id={die.id}
@@ -76,7 +76,7 @@ export default function App() {
   //checks if the game is over by seeing if all values of diceValues are equal
 
   function resetGame() {
-    setDiceValues(getAllNewDice())
+    setDice(getAllNewDice())
     setGameOver(false)
     setScore({
       current: 0,
@@ -86,14 +86,14 @@ export default function App() {
 
   React.useEffect(() => {
     function checkGameOver() {
-      let res = diceValues.filter(die => die.value === diceValues[0].value)
+      let res = dice.filter(die => die.value === dice[0].value)
       if (res.length === 10) {
         localStorage.setItem('best', JSON.stringify(Math.min(score.current, score.best)))
         setGameOver(true);
       }
     }
     checkGameOver()
-  }, [diceValues, score])
+  }, [dice, score])
 
   return (
     <main className="game--container">
