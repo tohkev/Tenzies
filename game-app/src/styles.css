@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #0B2434;
+    padding: 1.25rem;
+}
+
+.game--container {
+    background-color: #F5F5F5;
+    height: 38rem;
+    max-width: 42%;
+    margin: 1.8rem auto;
+    border-radius: 10px;
+    padding: 2rem 6rem;
+    text-align: center;
+    font-family: 'Karla', sans-serif;
+    color: #2B283A;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.game--heading {
+    line-height: 30px;
+    font-size: 3rem;
+    margin: 4rem 1.5rem 1.5rem;
+}
+
+.game--instruction {
+    width: 80%;
+    font-size: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    margin: 0 auto;
+    letter-spacing: -0.03em;
+    color: #4A4E74;
+}
+
+/* **************************DICE BLOCK STYLES************************ */
+
+.game--dice-block {
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+.die {
+    font-family: 'Karla', sans-serif;
+    color: #2B283A;
+    background-color: white;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    font-size: 1.75rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+}
+
+.die h2 {
+    margin: 0;
+}
