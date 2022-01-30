@@ -10,7 +10,7 @@ body {
 
 .game--container {
     background-color: #F5F5F5;
-    height: 38rem;
+    height: 40rem;
     max-width: 42%;
     margin: 1.8rem auto;
     border-radius: 10px;
@@ -59,6 +59,28 @@ body {
     cursor: pointer;
 }
 
+.die:hover {
+    background-color: rgba(255, 255, 255,0.5);
+}
+
 .die h2 {
     margin: 0;
+}
+
+/* ************************ROLL BUTTON****************************** */
+
+.game--roll-btn {
+    background-color: #5035FF;
+    box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+    border-radius: 10px;
+    padding: 0.75rem 3rem;
+    color: white;
+    font-size: 1.75rem;
+    font-family: inherit;
+    margin-top: 3rem;
+    cursor: pointer;
+}
+
+.game--roll-btn:hover {
+    background-color: #4326ff
 }

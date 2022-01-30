@@ -29,6 +29,7 @@ export default function App() {
       <section className="game--dice-block">
         {dieElements}
       </section>
+      <button className="game--roll-btn">Roll</button>
     </main>
   )
 }
