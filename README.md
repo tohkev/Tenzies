@@ -11,3 +11,5 @@ Tech used:
 - CSS
 - Accessing local storage
 - [React Confetti](https://github.com/alampros/react-confetti)
+
+![Website Image](./game-app/img/website-img.PNG)
