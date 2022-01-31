@@ -31,7 +31,6 @@ export default function App() {
   //rolls the next set of numbers, if a die is frozen, keep the old die
   function handleRoll() {
     setDice(prevValues => {
-      let newArr = getAllNewDice();
       return prevValues.map((die) => {
         return (
           die.isFrozen ?
@@ -86,7 +85,7 @@ export default function App() {
 
   React.useEffect(() => {
     function checkGameOver() {
-      let res = dice.filter(die => die.value === dice[0].value)
+      let res = dice.filter(die => (die.value === dice[0].value && die.isFrozen))
       if (res.length === 10) {
         localStorage.setItem('best', JSON.stringify(Math.min(score.current, score.best)))
         setGameOver(true);
