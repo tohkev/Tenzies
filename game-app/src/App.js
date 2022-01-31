@@ -84,14 +84,11 @@ export default function App() {
   }
 
   React.useEffect(() => {
-    function checkGameOver() {
-      let res = dice.filter(die => (die.value === dice[0].value && die.isFrozen))
-      if (res.length === 10) {
-        localStorage.setItem('best', JSON.stringify(Math.min(score.current, score.best)))
-        setGameOver(true);
-      }
+    let res = dice.filter(die => (die.value === dice[0].value && die.isFrozen))
+    if (res.length === 10) {
+      localStorage.setItem('best', JSON.stringify(Math.min(score.current, score.best)))
+      setGameOver(true);
     }
-    checkGameOver()
   }, [dice, score])
 
   return (
