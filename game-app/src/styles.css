@@ -114,7 +114,7 @@ body {
 .game--score {
     margin-left: 5rem;
     text-align: start;
-    width: 14rem;
+    width: 16rem;
 }
 
 .game--score > div {
