@@ -101,7 +101,7 @@ export default function App() {
       </section>
       <section className="game--options">
         {!gameOver && <button className="game--roll-btn" onClick={handleRoll}>Roll</button>}
-        {gameOver && <button className="game--reset-btn" onClick={resetGame}>Reset Game</button>}
+        {gameOver && <button className="game--reset-btn" onClick={resetGame}>New Game</button>}
         <div className="game--score">
           <div className="game--current-score">
             <p>Current Score:</p>

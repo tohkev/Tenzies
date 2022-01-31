@@ -44,7 +44,7 @@ body {
 .game--dice-block {
     display: grid;
     grid-template: auto auto / repeat(5, 1fr);
-    gap: 2.5rem;
+    gap: 2rem;
     margin-top: 2.5rem;
 }
 
@@ -87,6 +87,7 @@ body {
     font-family: inherit;
     cursor: pointer;
     border: none;
+    width: 12rem;
 }
 
 .game--roll-btn:hover, .game--reset-btn:hover {
@@ -99,7 +100,7 @@ body {
 
 .game--reset-btn {
     font-size: 1.5rem;
-    padding: 1rem 2rem;
+    padding: 1.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
