@@ -34,9 +34,9 @@ export default function App() {
       let newArr = getAllNewDice();
       return prevValues.map((die) => {
         return (
-          !die.isFrozen ?
-            newArr[die.id] :
-            die
+          die.isFrozen ?
+            die :
+            { ...die, value: Math.ceil(Math.random() * 6) }
         )
       })
     })
