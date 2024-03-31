@@ -1,0 +1,19 @@
+{
+  "name": "tenzies",
+  "version": "1.0.0",
+  "description": "This is a children's dice game which involves rolling dice until all numbers shown on the board are the same. Tap to freeze the dice and place and try to get the lowest score possible!",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tohkev/Tenzies.git"
+  },
+  "author": "tohkev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tohkev/Tenzies/issues"
+  },
+  "homepage": "https://github.com/tohkev/Tenzies#readme"
+}
